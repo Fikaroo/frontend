@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth scroll-pt-8;
+  }
+}
+
+.landing-frame-svg {
+  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
