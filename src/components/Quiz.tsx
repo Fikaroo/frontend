@@ -60,6 +60,7 @@ const QuizCardComponent = ({
         show={isOpen}
         size="md"
         popup={true}
+        className="h-full "
         onClose={() => setIsOpen(!isOpen)}
       >
         <Modal.Header />

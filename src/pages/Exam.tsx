@@ -8,6 +8,7 @@ import NavQuestion from "../components/NavQuestion";
 import { useEffect } from "react";
 import { useAnswers } from "../state/store.js";
 import { Button } from "flowbite-react";
+import { HomeIcon } from "@heroicons/react/24/outline";
 const Exam = () => {
   const lang = useLocation().state;
   const [isSubmit, setIsSubmit] = useState(false);
@@ -78,11 +79,18 @@ const Exam = () => {
       </div>
     </main>
   ) : (
-    <div className="container relative">
+    <div className="container relative px-2">
       <NavbarComponent isActive />
-      <h2 className="text-2xl font-semibold">{data?.[0]?.name}</h2>
-      <div className="relative flex gap-4 my-4">
-        <div className="grid w-9/12 gap-4">
+      <div className="flex items-center gap-3">
+        {isSubmit && (
+          <Link to="/category" replace>
+            <HomeIcon className="w-8 h-8" />
+          </Link>
+        )}
+        <h2 className="text-2xl font-semibold">{data?.[0]?.name}</h2>
+      </div>
+      <div className="relative flex flex-col-reverse gap-4 my-4 lg:flex-row">
+        <div className="grid gap-4 lg:w-9/12">
           {quiz?.questions?.map(({ id, ...question }, index) => (
             <Question
               key={id}
@@ -102,7 +110,7 @@ const Exam = () => {
           </Button>
         </div>
 
-        <div className="fixed grid gap-4 right-20">
+        <div className="right-0 grid gap-4 lg:fixed xl:right-20">
           <div className="w-full max-w-xs p-4 bg-white border rounded">
             <p className="mb-2">Suallarin Naviqasiyasi</p>
 

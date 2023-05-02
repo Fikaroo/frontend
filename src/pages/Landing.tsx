@@ -139,8 +139,8 @@ const LandingPage = () => {
       </header>
       <main className="py-16">
         <div>
-          <section className="relative flex items-center bg-white shadow-md rounded-xl">
-            <div className="p-6 text-center">
+          <section className="relative flex flex-col-reverse items-center bg-white shadow-md lg:flex-row rounded-xl">
+            <div className="w-full p-6 text-center">
               <h1 className="mb-8 text-5xl font-bold">
                 Welcome to our online exam system
               </h1>
@@ -149,19 +149,22 @@ const LandingPage = () => {
                 user-friendly platform.
               </p>
               <Link to="/auth/register">
-                <Button gradientDuoTone="purpleToBlue" className="px-5 mx-auto">
+                <Button
+                  gradientDuoTone="purpleToBlue"
+                  className="w-full px-5 mx-auto lg:w-fit"
+                >
                   Get Start
                 </Button>
               </Link>
             </div>
             <img
-              className="object-cover w-1/2 h-full landing-frame-svg aspect-video rounded-r-xl"
+              className="object-cover lg:w-1/2 lg:landing-frame-svg lg:aspect-auto aspect-video rounded-xl lg:rounded-none lg:rounded-r-xl"
               src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZXhhbXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60"
               alt="background"
             />
           </section>
           <section className="py-16">
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid gap-4 md:grid-cols-2">
               {keyFeatures.map(({ id, icon, title, subtitle, description }) => (
                 <FeaturesCard
                   icon={icon}
